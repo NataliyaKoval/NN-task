@@ -13,6 +13,7 @@ import {ResultComponent} from './components/result/result.component';
 import {FilmComponent} from './components/film/film.component';
 import {Page404Component} from './components/page404/page404.component';
 import {SearchComponent} from './components/search/search.component';
+import {ListItemComponent} from './components/list-item/list-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {SearchComponent} from './components/search/search.component';
     ResultComponent,
     FilmComponent,
     Page404Component,
-    SearchComponent
+    SearchComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,

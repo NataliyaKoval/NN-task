@@ -22,11 +22,9 @@ export class SearchComponent implements OnInit {
 
   onInput(e): void {
     this.movieTitle = e.target.value;
-    console.log(this.movieTitle)
   }
 
   cleanMovieTitle(): void {
     this.movieTitle = '';
-    console.log(this.movieTitle)
   }
 }

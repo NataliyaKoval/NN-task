@@ -30,10 +30,10 @@ export class FilmsService {
       params: {
         apikey: '2ebec9e3',
         s: movieTitle,
-        page: page
+        page: page,
+        plot: 'full'
       }
     })
-      .pipe(pluck('Search'));
   }
 }
 

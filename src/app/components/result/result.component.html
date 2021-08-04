@@ -1,1 +1,3 @@
-<p>result works!</p>
+<app-search (submitted)="onSearchSubmit($event)"></app-search>
+<div>Total: {{total}}</div>
+<app-list-item *ngFor="let item of moviesList" [item]="item"></app-list-item>
