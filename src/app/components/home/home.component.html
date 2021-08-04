@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="carousel-wrapper">
+  <carousel
+    [cellsToShow]=4
+    [height]=450
+    [width]=1200
+  >
+    <a *ngFor="let movie of sliderImages" class="carousel-cell">
+      <p class="movie-title">{{movie.Title}}</p>
+      <img class="image" src="{{movie.Poster}}">
+    </a>
+  </carousel>
+</div>

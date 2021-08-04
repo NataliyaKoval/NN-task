@@ -1,0 +1,18 @@
+.carousel-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.movie-title {
+  background-color: #172b61;
+  color: aliceblue;
+  padding: 10px 30px;
+  text-align: center;
+  height: 50px;
+  margin: 0;
+}
+
