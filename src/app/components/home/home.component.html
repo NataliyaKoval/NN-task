@@ -4,7 +4,7 @@
     [height]=450
     [width]=1200
   >
-    <a *ngFor="let movie of sliderImages" class="carousel-cell">
+    <a *ngFor="let movie of sliderImages" class="carousel-cell" routerLink="/{{movie.imdbID}}">
       <p class="movie-title">{{movie.Title}}</p>
       <img class="image" src="{{movie.Poster}}">
     </a>

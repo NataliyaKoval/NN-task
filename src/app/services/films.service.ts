@@ -24,7 +24,6 @@ export class FilmsService {
       .pipe(pluck('Search'));
   }
 
-
   public searchMovies(movieTitle: string, page: number) {
     return this.http.get<any>(this.rootUrl, {
       params: {
@@ -35,5 +34,17 @@ export class FilmsService {
       }
     })
   }
+
+  public getDetails(id) {
+    return this.http.get(this.rootUrl, {
+      params: {
+        apikey: '2ebec9e3',
+        i: id,
+        plot: 'full'
+      }
+    })
+  }
 }
+
+
 
