@@ -1,3 +1,7 @@
 <app-search (submitted)="onSearchSubmit($event)"></app-search>
 <div>Total: {{total}}</div>
-<app-list-item *ngFor="let item of moviesList" [item]="item"></app-list-item>
+<pagination-controls (pageChange)="changePage($event)"></pagination-controls>
+<app-list-item
+  *ngFor="let item of moviesList | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: total }"
+  [item]="item"></app-list-item>
+

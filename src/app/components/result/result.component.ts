@@ -9,7 +9,9 @@ import {FilmsService} from "../../services/films.service";
 export class ResultComponent implements OnInit {
   moviesList = [];
   total = null;
-  page: 1;
+  page = 1;
+  pageSize = 10;
+  movieTitle = '';
 
   constructor(private filmsService: FilmsService) {
   }
@@ -18,8 +20,16 @@ export class ResultComponent implements OnInit {
   }
 
   onSearchSubmit(movieTitle): void {
-    this.filmsService.searchMovies(movieTitle, this.page).subscribe((res) => {
-      console.log(res)
+    this.movieTitle = movieTitle;
+    this.filmsService.searchMovies(this.movieTitle, this.page).subscribe((res) => {
+      this.moviesList = res.Search;
+      this.total = res.totalResults;
+    })
+  }
+
+  changePage(e): void {
+    this.page = e;
+    this.filmsService.searchMovies(this.movieTitle, this.page).subscribe((res) => {
       this.moviesList = res.Search;
       this.total = res.totalResults;
     })
