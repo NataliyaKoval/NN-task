@@ -12,6 +12,7 @@ import {NavComponent} from './components/nav/nav.component';
 import {ResultComponent} from './components/result/result.component';
 import {FilmComponent} from './components/film/film.component';
 import {Page404Component} from './components/page404/page404.component';
+import {SearchComponent} from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {Page404Component} from './components/page404/page404.component';
     NavComponent,
     ResultComponent,
     FilmComponent,
-    Page404Component
+    Page404Component,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

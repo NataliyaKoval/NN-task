@@ -1,0 +1,7 @@
+<form (submit)="onFormSubmit($event)">
+  <input (input)="onInput($event)"
+         placeholder="Enter search term"
+         type="text">
+  <button type="submit">Submit</button>
+  <button (click)="cleanMovieTitle()" type="reset">Reset</button>
+</form>
