@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FilmsService} from "../../services/films.service";
+import {SearchService} from "../../services/search.service";
 
 @Component({
   selector: 'app-result',
@@ -11,19 +12,19 @@ export class ResultComponent implements OnInit {
   total = null;
   page = 1;
   pageSize = 10;
-  movieTitle = '';
+  movieTitle;
 
-  constructor(private filmsService: FilmsService) {
+  constructor(private filmsService: FilmsService,
+              private searchService: SearchService) {
   }
 
   ngOnInit(): void {
-  }
-
-  onSearchSubmit(movieTitle): void {
-    this.movieTitle = movieTitle;
-    this.filmsService.searchMovies(this.movieTitle, this.page).subscribe((res) => {
-      this.moviesList = res.Search;
-      this.total = res.totalResults;
+    this.searchService.titleChange$.subscribe((data: string) => {
+      this.movieTitle = data;
+      this.filmsService.searchMovies(this.movieTitle, this.page).subscribe((res) => {
+        this.moviesList = res.Search;
+        this.total = res.totalResults;
+      })
     })
   }
 

@@ -1,4 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SearchService} from "../../services/search.service";
 
 @Component({
   selector: 'app-search',
@@ -6,18 +7,12 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  @Output() submitted = new EventEmitter();
   movieTitle = '';
 
-  constructor() {
+  constructor(private searchService: SearchService) {
   }
 
   ngOnInit(): void {
-  }
-
-  onFormSubmit(e): void {
-    e.preventDefault();
-    this.submitted.emit(this.movieTitle);
   }
 
   onInput(e): void {
@@ -26,5 +21,10 @@ export class SearchComponent implements OnInit {
 
   cleanMovieTitle(): void {
     this.movieTitle = '';
+  }
+
+  onFormSubmit(e): void {
+    e.preventDefault();
+    this.searchService.setTitle(this.movieTitle);
   }
 }
