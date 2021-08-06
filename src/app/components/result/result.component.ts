@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FilmsService} from "../../services/films.service";
 import {SearchService} from "../../services/search.service";
+import {Movie} from "../../interfaces/movie.interface";
 
 @Component({
   selector: 'app-result',
@@ -8,7 +9,7 @@ import {SearchService} from "../../services/search.service";
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-  moviesList = [];
+  moviesList: Array<Movie> = [];
   total = null;
   page = 1;
   pageSize = 10;

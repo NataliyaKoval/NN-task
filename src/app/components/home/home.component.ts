@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FilmsService} from "../../services/films.service";
-import {MovieInterface} from "../../interfaces/movie.interface";
+import {Movie} from "../../interfaces/movie.interface";
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import {MovieInterface} from "../../interfaces/movie.interface";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  sliderImages: Array<MovieInterface> = [];
+  sliderImages: Array<Movie> = [];
 
   constructor(private filmsService: FilmsService) {
   }
