@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 import {SearchService} from "../../services/search.service";
 
 @Component({
@@ -9,7 +10,10 @@ import {SearchService} from "../../services/search.service";
 export class SearchComponent implements OnInit {
   movieTitle = '';
 
-  constructor(private searchService: SearchService) {
+  constructor(
+    private searchService: SearchService,
+    private router: Router
+  ) {
   }
 
   ngOnInit(): void {
@@ -25,6 +29,7 @@ export class SearchComponent implements OnInit {
 
   onFormSubmit(e): void {
     e.preventDefault();
+    this.router.navigateByUrl('/result');
     this.searchService.setTitle(this.movieTitle);
   }
 }
