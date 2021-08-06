@@ -1,12 +1,12 @@
 <div class="carousel-wrapper">
   <carousel
     [cellsToShow]=4
-    [height]=450
-    [width]=1200
+    [height]=500
+    [width]=1100
   >
     <a *ngFor="let movie of sliderImages" class="carousel-cell" routerLink="/movie/{{movie.imdbID}}">
       <p class="movie-title">{{movie.Title}}</p>
-      <img class="image" src="{{movie.Poster}}">
+      <img alt="{{movie.Title}}" class="image" src="{{movie.Poster}}">
     </a>
   </carousel>
 </div>
