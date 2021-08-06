@@ -30,6 +30,6 @@ export class FilmComponent implements OnInit {
   }
 
   onBackClick(): void {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/result');
   }
 }
