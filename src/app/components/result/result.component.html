@@ -1,8 +1,30 @@
-<div *ngIf="moviesList.length">
-  <div>Total: {{total}}</div>
-  <pagination-controls (pageChange)="changePage($event)"></pagination-controls>
-  <app-list-item
-    *ngFor="let item of moviesList | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: total }"
-    [item]="item"></app-list-item>
-</div>
+<section *ngIf="moviesList.length">
+  <div class="total">Total: {{total}}</div>
+
+  <div class="table-container">
+    <table class="table is-striped is-fullwidth">
+      <thead>
+      <tr>
+        <th>Poster</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Type</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of moviesList | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: total }">
+        <td><a routerLink="/movie/{{item.imdbID}}"><img alt="{{item.Title}}" class="poster" src="{{item.Poster}}"></a>
+        </td>
+        <td><a routerLink="/movie/{{item.imdbID}}">{{item.Title}}</a></td>
+        <td>{{item.Year}}</td>
+        <td>{{item.Type}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination-wrapper">
+    <pagination-controls (pageChange)="changePage($event)" class="pagination"></pagination-controls>
+  </div>
+</section>
 

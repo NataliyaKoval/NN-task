@@ -1,8 +1,20 @@
-<table>
-  <tr>
-    <td><img src="{{item.Poster}}"></td>
-    <td>{{item.Title}}</td>
-    <td>{{item.Year}}</td>
-    <td>{{item.Type}}</td>
-  </tr>
-</table>
+<div class="table-container">
+  <table class="table is-striped">
+    <thead>
+    <tr>
+      <th>Poster</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><img class="poster" src="{{item.Poster}}"></td>
+      <td>{{item.Title}}</td>
+      <td>{{item.Year}}</td>
+      <td>{{item.Type}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

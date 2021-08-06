@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FilmsService} from "../../services/films.service";
 
 @Component({
@@ -12,7 +12,8 @@ export class FilmComponent implements OnInit {
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private filmsService: FilmsService) {
+    private filmsService: FilmsService,
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -24,6 +25,11 @@ export class FilmComponent implements OnInit {
     this.filmsService.getDetails(id)
       .subscribe(res => {
         this.details = res;
+        console.log(this.details)
       })
+  }
+
+  onBackClick(): void {
+    this.router.navigateByUrl('/');
   }
 }

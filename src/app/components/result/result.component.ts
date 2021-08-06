@@ -33,6 +33,7 @@ export class ResultComponent implements OnInit {
     this.filmsService.searchMovies(this.movieTitle, this.page).subscribe((res) => {
       this.moviesList = res.Search;
       this.total = res.totalResults;
-    })
+    });
+    window.scrollTo(0, 0);
   }
 }

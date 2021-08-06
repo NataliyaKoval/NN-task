@@ -1,0 +1,13 @@
+.hero-body {
+  padding: 30px;
+  display: flex;
+  gap: 50px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.logo {
+  height: 100px;
+}

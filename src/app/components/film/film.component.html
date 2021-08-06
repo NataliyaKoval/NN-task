@@ -1,1 +1,32 @@
-{{details?.Title}}
+<div class="container">
+  <div>
+    <img [src]="details.Poster" alt="{{details.Title}}" class="poster">
+    <p><span class="detail">IMDB Rating:</span> {{details.imdbRating}}</p>
+    <p><span class="detail">IMDB Votes:</span> {{details.imdbVotes}}</p>
+  </div>
+  <div>
+    <h1 class="movie-title">{{details.Title | uppercase}}</h1>
+    <p><span class="detail">Actors:</span> {{details.Actors}}</p>
+    <p><span class="detail">Awards:</span> {{details.Awards}}</p>
+    <p><span class="detail">Box Office:</span> {{details.BoxOffice}}</p>
+    <p><span class="detail">Country:</span> {{details.Country}}</p>
+    <p><span class="detail">DVD:</span> {{details.DVD}}</p>
+    <p><span class="detail">Director:</span> {{details.Director}}</p>
+    <p><span class="detail">Genre:</span> {{details.Genre}}</p>
+    <p><span class="detail">Language:</span> {{details.Language}}</p>
+    <p><span class="detail">Metascore:</span> {{details.Metascore}}</p>
+    <p><span class="detail">Plot:</span> {{details.Plot}}</p>
+    <p><span class="detail">Production:</span> {{details.Production}}</p>
+    <p><span class="detail">Rated:</span> {{details.Language}}</p>
+    <p><span class="detail">Released:</span> {{details.Released}}</p>
+    <p><span class="detail">Runtime:</span> {{details.Runtime}}</p>
+    <p><span class="detail">Type:</span> {{details.Type}}</p>
+    <p><span class="detail">Website:</span> {{details.Website}}</p>
+    <p><span class="detail">Writer:</span> {{details.Writer}}</p>
+    <p><span class="detail">Year:</span> {{details.Year}}</p>
+
+    <button (click)="onBackClick()" class="button is-link">Back</button>
+  </div>
+
+</div>
+

@@ -1,0 +1,25 @@
+.total {
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  border-bottom: 2px solid #485FC7;
+}
+
+.table-container {
+  padding: 0 30px;
+}
+
+.poster {
+  height: 100px;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination::ng-deep .ngx-pagination .current {
+  background-color: #485FC7;
+}

@@ -1,0 +1,19 @@
+.search {
+  padding: 15px;
+  background-color: #96cad7;
+  margin-bottom: 20px;
+}
+
+.input {
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  margin-left: 20px;
+  width: 150px;
+}
