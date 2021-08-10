@@ -36,3 +36,11 @@
   font-size: 18px;
   color: #485FC7;
 }
+
+.spinner-wrapper {
+  width: 100vw;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,15 +1,23 @@
-<section *ngIf="!noResults">
+<div *ngIf="loading" class="spinner-wrapper">
+  <mat-progress-spinner
+    [color]="color"
+    [mode]="mode"
+    [value]="value">
+    >
+  </mat-progress-spinner>
+</div>
 
-  <ng-container *ngIf="moviesList.length">
-    <div class="total">Total: {{total}}</div>
+<section *ngIf="!noResults && !loading && moviesList.length">
 
-    <div class="table-container">
-      <table class="table is-striped is-fullwidth">
-        <thead>
-        <tr>
-          <th>Poster</th>
-          <th>Title</th>
-          <th>Year</th>
+  <div class="total">Total: {{total}}</div>
+
+  <div class="table-container">
+    <table class="table is-striped is-fullwidth">
+      <thead>
+      <tr>
+        <th>Poster</th>
+        <th>Title</th>
+        <th>Year</th>
           <th>Type</th>
         </tr>
         </thead>
@@ -29,14 +37,15 @@
           <td>{{item.Type}}</td>
         </tr>
         </tbody>
-      </table>
-    </div>
+    </table>
+  </div>
 
-    <div class="pagination-wrapper">
-      <pagination-controls (pageChange)="changePage($event)" class="pagination"></pagination-controls>
-    </div>
+  <div class="pagination-wrapper">
+    <pagination-controls (pageChange)="changePage($event)" class="pagination"></pagination-controls>
+  </div>
 
-  </ng-container>
 </section>
 
-<div *ngIf="noResults" class="message">There are no results that match your search</div>
+<div *ngIf="noResults && !loading" class="message">There are no results that match your search</div>
+
+

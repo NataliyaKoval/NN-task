@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FilmsService} from "../../services/films.service";
 import {SearchService} from "../../services/search.service";
 import {Movie} from "../../interfaces/movie.interface";
+import {ThemePalette} from "@angular/material/core";
+import {ProgressSpinnerMode} from "@angular/material/progress-spinner";
 
 @Component({
   selector: 'app-result',
@@ -16,7 +18,11 @@ export class ResultComponent implements OnInit {
   movieTitle;
   defaultSrc = 'assets/images/defaultPoster.jpg';
   noResults = false;
-  response;
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
+  loading = false;
+
 
   constructor(private filmsService: FilmsService,
               private searchService: SearchService) {
@@ -30,6 +36,7 @@ export class ResultComponent implements OnInit {
   }
 
   searchMovies(): void {
+    this.loading = true;
     this.filmsService.searchMovies(this.movieTitle, this.page).subscribe((res) => {
       this.moviesList = res.Search;
       this.total = res.totalResults;
@@ -38,7 +45,8 @@ export class ResultComponent implements OnInit {
       } else {
         this.noResults = false;
       }
-    })
+      this.loading = false;
+    }, error => this.loading = false);
   }
 
   changePage(e): void {

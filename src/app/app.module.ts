@@ -3,6 +3,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -34,7 +36,9 @@ import {ListItemComponent} from './components/list-item/list-item.component';
     AppRoutingModule,
     HttpClientModule,
     IvyCarouselModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
