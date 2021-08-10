@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {Subject} from "rxjs";
+import {ReplaySubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
   title: string = 'love';
-  titleChange$ = new Subject();
+  titleChange$ = new ReplaySubject(1);
 
   constructor() {
     this.titleChange$.subscribe((value: string) => {

@@ -26,11 +26,11 @@ export class FilmComponent implements OnInit {
     this.filmsService.getDetails(id)
       .subscribe(res => {
         this.details = res;
-        console.log(this.details)
       })
   }
 
   onBackClick(): void {
     this.router.navigateByUrl('/result');
+    window.scrollTo(0, 0);
   }
 }
