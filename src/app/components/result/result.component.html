@@ -1,10 +1,5 @@
 <div *ngIf="loading" class="spinner-wrapper">
-  <mat-progress-spinner
-    [color]="color"
-    [mode]="mode"
-    [value]="value">
-    >
-  </mat-progress-spinner>
+  <app-spinner></app-spinner>
 </div>
 
 <section *ngIf="!noResults && !loading && moviesList.length">

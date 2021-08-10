@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FilmsService} from "../../services/films.service";
 import {SearchService} from "../../services/search.service";
 import {Movie} from "../../interfaces/movie.interface";
-import {ThemePalette} from "@angular/material/core";
-import {ProgressSpinnerMode} from "@angular/material/progress-spinner";
 
 @Component({
   selector: 'app-result',
@@ -18,11 +16,7 @@ export class ResultComponent implements OnInit {
   movieTitle;
   defaultSrc = 'assets/images/defaultPoster.jpg';
   noResults = false;
-  color: ThemePalette = 'primary';
-  mode: ProgressSpinnerMode = 'indeterminate';
-  value = 50;
   loading = false;
-
 
   constructor(private filmsService: FilmsService,
               private searchService: SearchService) {

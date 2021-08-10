@@ -10,6 +10,7 @@ import {FilmsService} from "../../services/films.service";
 export class FilmComponent implements OnInit {
   details;
   defaultSrc = 'assets/images/defaultPoster.jpg';
+  loading = false;
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -22,10 +23,12 @@ export class FilmComponent implements OnInit {
   }
 
   getMovieDetails(): void {
+    this.loading = true;
     const id = this.activeRoute.snapshot.params.id;
     this.filmsService.getDetails(id)
       .subscribe(res => {
         this.details = res;
+        this.loading = false;
       })
   }
 

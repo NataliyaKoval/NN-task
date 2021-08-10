@@ -1,4 +1,8 @@
-<div class="container">
+<div *ngIf="loading" class="spinner-wrapper">
+  <app-spinner></app-spinner>
+</div>
+
+<div *ngIf="!loading" class="container">
   <div>
     <img
       [src]="details.Poster !== 'N/A' ? details.Poster : defaultSrc"

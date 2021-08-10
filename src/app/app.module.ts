@@ -17,6 +17,7 @@ import {FilmComponent} from './components/film/film.component';
 import {Page404Component} from './components/page404/page404.component';
 import {SearchComponent} from './components/search/search.component';
 import {ListItemComponent} from './components/list-item/list-item.component';
+import {SpinnerComponent} from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {ListItemComponent} from './components/list-item/list-item.component';
     FilmComponent,
     Page404Component,
     SearchComponent,
-    ListItemComponent
+    ListItemComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
