@@ -29,3 +29,10 @@
 .pagination::ng-deep .ngx-pagination .current {
   background-color: #485FC7;
 }
+
+.message {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #485FC7;
+}

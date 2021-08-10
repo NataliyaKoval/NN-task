@@ -15,6 +15,8 @@ export class ResultComponent implements OnInit {
   pageSize = 10;
   movieTitle;
   defaultSrc = 'assets/images/defaultPoster.jpg';
+  noResults = false;
+  response;
 
   constructor(private filmsService: FilmsService,
               private searchService: SearchService) {
@@ -23,10 +25,19 @@ export class ResultComponent implements OnInit {
   ngOnInit(): void {
     this.searchService.titleChange$.subscribe((data: string) => {
       this.movieTitle = data;
-      this.filmsService.searchMovies(this.movieTitle, this.page).subscribe((res) => {
-        this.moviesList = res.Search;
-        this.total = res.totalResults;
-      })
+      this.searchMovies();
+    })
+  }
+
+  searchMovies(): void {
+    this.filmsService.searchMovies(this.movieTitle, this.page).subscribe((res) => {
+      this.moviesList = res.Search;
+      this.total = res.totalResults;
+      if (res.Response === 'False') {
+        this.noResults = true;
+      } else {
+        this.noResults = false;
+      }
     })
   }
 
