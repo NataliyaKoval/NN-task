@@ -14,6 +14,7 @@ export class ResultComponent implements OnInit {
   page = 1;
   pageSize = 10;
   movieTitle;
+  defaultSrc = 'assets/images/defaultPoster.jpg';
 
   constructor(private filmsService: FilmsService,
               private searchService: SearchService) {

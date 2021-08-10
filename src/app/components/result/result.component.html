@@ -13,7 +13,13 @@
       </thead>
       <tbody>
       <tr *ngFor="let item of moviesList | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: total }">
-        <td><a routerLink="/movie/{{item.imdbID}}"><img alt="{{item.Title}}" class="poster" src="{{item.Poster}}"></a>
+        <td>
+          <a routerLink="/movie/{{item.imdbID}}">
+            <img
+              [src]="item.Poster !== 'N/A' ? item.Poster : defaultSrc"
+              alt="{{item.Title}}"
+              class="poster">
+          </a>
         </td>
         <td><a routerLink="/movie/{{item.imdbID}}">{{item.Title}}</a></td>
         <td>{{item.Year}}</td>

@@ -9,6 +9,7 @@ import {FilmsService} from "../../services/films.service";
 })
 export class FilmComponent implements OnInit {
   details;
+  defaultSrc = 'assets/images/defaultPoster.jpg';
 
   constructor(
     private activeRoute: ActivatedRoute,

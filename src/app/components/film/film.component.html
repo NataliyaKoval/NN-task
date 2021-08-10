@@ -1,6 +1,9 @@
 <div class="container">
   <div>
-    <img [src]="details.Poster" alt="{{details.Title}}" class="poster">
+    <img
+      [src]="details.Poster !== 'N/A' ? details.Poster : defaultSrc"
+      alt="{{details.Title}}"
+      class="poster">
     <p><span class="detail">IMDB Rating:</span> {{details.imdbRating}}</p>
     <p><span class="detail">IMDB Votes:</span> {{details.imdbVotes}}</p>
   </div>
